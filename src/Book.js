@@ -13,8 +13,10 @@ class Book extends Component {
   render() {
     const { book, books, changeShelf } = this.props
 
+    const black = 'icons/black.jpg'
+
     // add fallbacks for missing cover images and title
-    const coverImg = book.imageLinks.thumbnail
+    const coverImg = book.imageLinks && book.imageLinks.thumbnail ? book.imageLinks.thumbnail : black
     const title = book.title
 
     return (
