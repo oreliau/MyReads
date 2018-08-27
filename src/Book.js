@@ -14,7 +14,7 @@ class Book extends Component {
     const { book, books, changeShelf } = this.props
 
     // add fallbacks for missing cover images and title
-    const coverImg = book.imageLinks
+    const coverImg = book.imageLinks.thumbnail
     const title = book.title
 
     return (
@@ -23,7 +23,10 @@ class Book extends Component {
               <div className="book-top">
                 <div
                   className="book-cover"
-                  style={{ backgroundImage: `url(${coverImg})`}}>
+                  style={{ 
+                  width: 128,
+                  height: 193,
+                  backgroundImage: `url('${coverImg}')`}}>
                 </div>
                 <ShelfChanger
                   book={ book }
